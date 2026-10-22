@@ -1,6 +1,8 @@
 // src/app/sitemap.js
 import { site } from "@/content/site";
 
+export const dynamic = "force-static";
+
 export default function sitemap() {
   const baseUrl = site.url;
   const now = new Date("2026-10-21");

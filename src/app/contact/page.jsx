@@ -16,9 +16,7 @@ export const metadata = {
   },
 };
 
-export default async function ContactPage({ searchParams }) {
-  const resolvedParams = (await searchParams) || {};
-  const currentTopic = resolvedParams.topik || "pelanggan";
+export default function ContactPage() {
 
   return (
     <>
@@ -45,7 +43,7 @@ export default async function ContactPage({ searchParams }) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Form Column (7 cols) */}
             <div className="lg:col-span-7">
-              <ContactForm defaultTopic={currentTopic} />
+              <ContactForm />
             </div>
 
             {/* Quick Chat & Trust Column (5 cols) */}

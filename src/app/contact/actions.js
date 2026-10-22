@@ -1,5 +1,3 @@
-"use server";
-
 // src/app/contact/actions.js
 import { contactSchema } from "@/lib/validations";
 import { checkRateLimit } from "@/lib/rate-limit";

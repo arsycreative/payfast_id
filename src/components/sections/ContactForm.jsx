@@ -1,7 +1,7 @@
 "use client";
 
 // src/components/sections/ContactForm.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
@@ -25,16 +25,11 @@ export function ContactForm({ defaultTopic = "pelanggan" }) {
     message: "",
   });
 
-  const validTopic = ["pelanggan", "kemitraan", "integrasi", "lainnya"].includes(
-    defaultTopic
-  )
-    ? defaultTopic
-    : "pelanggan";
-
   const {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(contactSchema),
@@ -42,12 +37,22 @@ export function ContactForm({ defaultTopic = "pelanggan" }) {
       name: "",
       email: "",
       phone: "",
-      topic: validTopic,
+      topic: defaultTopic,
       message: "",
       consent: false,
       website: "", // honeypot
     },
   });
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const top = params.get("topik");
+      if (top && ["pelanggan", "kemitraan", "integrasi", "lainnya"].includes(top)) {
+        setValue("topic", top);
+      }
+    }
+  }, [setValue]);
 
   const onSubmit = async (data) => {
     setServerStatus({ state: "loading", message: "" });
