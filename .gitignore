@@ -24,6 +24,8 @@
 .DS_Store
 *.pem
 *.zip
+*password*
+*ftp*
 
 # debug
 npm-debug.log*
