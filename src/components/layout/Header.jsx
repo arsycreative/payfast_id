@@ -25,6 +25,24 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (e, href) => {
+    if (pathname === href) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      setTimeout(() => {
+        if (window.scrollY > 0) {
+          window.scrollTo(0, 0);
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+        }
+      }, 400);
+    } else {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+  };
+
   return (
     <>
       {/* Skip link for a11y */}
@@ -58,6 +76,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className={cn(
                     "px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200",
                     isActive
@@ -78,11 +97,17 @@ export function Header() {
               variant="outline"
               size="sm"
               icon={User}
+              onClick={(e) => handleNavClick(e, "/member")}
               className="font-semibold text-secondary-800 hover:text-primary-600 hover:border-primary-500 bg-white shadow-xs"
             >
               Member Area
             </Button>
-            <Button href="/contact" variant="primary" size="md">
+            <Button
+              href="/contact"
+              variant="primary"
+              size="md"
+              onClick={(e) => handleNavClick(e, "/contact")}
+            >
               Hubungi Kami
             </Button>
           </div>

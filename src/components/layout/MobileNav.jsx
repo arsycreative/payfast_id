@@ -36,6 +36,27 @@ export function MobileNav({ isOpen, onClose }) {
     };
   }, [isOpen]);
 
+  const handleNavClick = (e, href) => {
+    onClose();
+    if (pathname === href) {
+      e.preventDefault();
+      setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      }, 50);
+      setTimeout(() => {
+        if (window.scrollY > 0) {
+          window.scrollTo(0, 0);
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+        }
+      }, 450);
+    } else {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -76,7 +97,7 @@ export function MobileNav({ isOpen, onClose }) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  onClick={onClose}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className={`flex items-center justify-between px-4 py-3 rounded-xl font-heading font-semibold text-base transition-colors ${
                     isActive
                       ? "bg-primary-50 text-primary-600"
@@ -110,7 +131,7 @@ export function MobileNav({ isOpen, onClose }) {
               variant="outline"
               size="md"
               icon={User}
-              onClick={onClose}
+              onClick={(e) => handleNavClick(e, "/member")}
               className="w-full font-semibold"
             >
               Member Area
@@ -119,7 +140,7 @@ export function MobileNav({ isOpen, onClose }) {
               href="/contact"
               variant="primary"
               size="md"
-              onClick={onClose}
+              onClick={(e) => handleNavClick(e, "/contact")}
               className="w-full"
             >
               Hubungi Kami

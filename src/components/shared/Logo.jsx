@@ -1,12 +1,36 @@
+"use client";
+
 // src/components/shared/Logo.jsx
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 export function Logo({ inverted = false, className = "" }) {
+  const pathname = usePathname();
+
+  const handleLogoClick = (e) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      setTimeout(() => {
+        if (window.scrollY > 0) {
+          window.scrollTo(0, 0);
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+        }
+      }, 400);
+    } else {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+  };
+
   return (
     <Link
       href="/"
+      onClick={handleLogoClick}
       aria-label="Payfast ID Home"
       className={cn("inline-flex items-center gap-2.5 group select-none", className)}
     >

@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFab } from "@/components/layout/WhatsAppFab";
 import { ScrollTop } from "@/components/layout/ScrollTop";
+import { ScrollRestoration } from "@/components/layout/ScrollRestoration";
 import { ToastProvider } from "@/components/ui/Toast";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { getOrganizationSchema, getWebSiteSchema } from "@/lib/seo";
@@ -104,6 +105,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-screen flex flex-col font-sans bg-white text-neutral-800 antialiased selection:bg-primary-100 selection:text-primary-700">
         <ToastProvider>
+          <ScrollRestoration />
           <Header />
           <main id="main-content" className="flex-grow">
             {children}
