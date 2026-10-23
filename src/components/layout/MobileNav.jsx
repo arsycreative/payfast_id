@@ -4,7 +4,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { X, MessageCircle, Phone, Clock, ChevronRight } from "lucide-react";
+import { X, MessageCircle, Phone, Clock, ChevronRight, User } from "lucide-react";
 import { site } from "@/content/site";
 import { Logo } from "@/components/shared/Logo";
 import { Button } from "@/components/ui/Button";
@@ -106,13 +106,14 @@ export function MobileNav({ isOpen, onClose }) {
 
           <div className="space-y-2 pt-2">
             <Button
-              href={waLink("Halo Payfast ID, saya ingin bertanya tentang layanan.")}
-              variant="whatsapp"
+              href="/member"
+              variant="outline"
               size="md"
-              icon={MessageCircle}
-              className="w-full"
+              icon={User}
+              onClick={onClose}
+              className="w-full font-semibold"
             >
-              Chat WhatsApp
+              Member Area
             </Button>
             <Button
               href="/contact"

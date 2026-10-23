@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, MessageCircle } from "lucide-react";
+import { Menu, User } from "lucide-react";
 import { site } from "@/content/site";
 import { Logo } from "@/components/shared/Logo";
 import { Container } from "@/components/shared/Container";
@@ -74,13 +74,13 @@ export function Header() {
           {/* Desktop Right Actions */}
           <div className="hidden lg:flex items-center gap-3">
             <Button
-              href={waLink("Halo Payfast ID, saya ingin konsultasi produk digital.")}
-              variant="ghost"
+              href="/member"
+              variant="outline"
               size="sm"
-              icon={MessageCircle}
-              className="text-neutral-700 hover:text-primary-600 font-semibold"
+              icon={User}
+              className="font-semibold text-secondary-800 hover:text-primary-600 hover:border-primary-500 bg-white shadow-xs"
             >
-              Chat WA
+              Member Area
             </Button>
             <Button href="/contact" variant="primary" size="md">
               Hubungi Kami
