@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFab } from "@/components/layout/WhatsAppFab";
 import { ScrollTop } from "@/components/layout/ScrollTop";
+import { ToastProvider } from "@/components/ui/Toast";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { getOrganizationSchema, getWebSiteSchema } from "@/lib/seo";
 import "./globals.css";
@@ -102,13 +103,15 @@ export default function RootLayout({ children }) {
         <JsonLd data={webSiteSchema} />
       </head>
       <body className="min-h-screen flex flex-col font-sans bg-white text-neutral-800 antialiased selection:bg-primary-100 selection:text-primary-700">
-        <Header />
-        <main id="main-content" className="flex-grow">
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppFab />
-        <ScrollTop />
+        <ToastProvider>
+          <Header />
+          <main id="main-content" className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+          <WhatsAppFab />
+          <ScrollTop />
+        </ToastProvider>
       </body>
     </html>
   );

@@ -11,6 +11,7 @@ import { site } from "@/content/site";
 import { services } from "@/content/services";
 import { Logo } from "@/components/shared/Logo";
 import { Container } from "@/components/shared/Container";
+import { AppDownloadBadges } from "@/components/shared/AppDownloadBadges";
 import { waLink } from "@/lib/utils";
 
 export function Footer() {
@@ -67,6 +68,13 @@ export function Footer() {
               >
                 <Send className="w-4 h-4" />
               </a>
+            </div>
+
+            <div className="pt-3 space-y-2">
+              <p className="text-xs font-bold uppercase tracking-wider text-neutral-400">
+                Aplikasi Payfast ID
+              </p>
+              <AppDownloadBadges size="sm" variant="dark" />
             </div>
           </div>
 

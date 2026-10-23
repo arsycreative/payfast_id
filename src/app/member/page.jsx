@@ -19,6 +19,7 @@ import {
 import { Container } from "@/components/shared/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
+import { AppDownloadBadges } from "@/components/shared/AppDownloadBadges";
 import { waLink } from "@/lib/utils";
 
 export default function MemberAreaPage() {
@@ -60,15 +61,18 @@ export default function MemberAreaPage() {
             </div>
 
             {/* Announcement Banner: Coming Soon to Mobile App */}
-            <div className="my-6 p-4 rounded-2xl bg-amber-50/80 border border-amber-200/90 flex items-start gap-3">
+            <div className="my-6 p-4 sm:p-5 rounded-2xl bg-amber-50/80 border border-amber-200/90 flex flex-col sm:flex-row items-start gap-3.5">
               <ShieldAlert className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-              <div className="space-y-1">
-                <p className="text-xs sm:text-sm font-bold text-amber-900">
-                  Aplikasi Mobile Segera Hadir di Play Store & App Store!
-                </p>
-                <p className="text-xs text-amber-800 leading-relaxed">
-                  Fitur autentikasi web ini sedang dalam tahap sinkronisasi dengan aplikasi resmi Payfast ID. Tombol masuk dan pendaftaran mandiri dinonaktifkan sementara hingga aplikasi dirilis resmi.
-                </p>
+              <div className="space-y-3 flex-1">
+                <div>
+                  <p className="text-xs sm:text-sm font-bold text-amber-900">
+                    Aplikasi Mobile Segera Hadir di Play Store & App Store!
+                  </p>
+                  <p className="text-xs text-amber-800 leading-relaxed mt-0.5">
+                    Fitur autentikasi web sedang dalam sinkronisasi dengan aplikasi resmi Payfast ID. Klik tombol unduh di bawah untuk cek status peluncuran aplikasi:
+                  </p>
+                </div>
+                <AppDownloadBadges size="sm" showBadge />
               </div>
             </div>
 
@@ -283,13 +287,18 @@ export default function MemberAreaPage() {
           </div>
 
           {/* Mobile App Coming Soon Teaser Strip */}
-          <div className="mt-8 text-center text-xs text-neutral-500 flex flex-wrap items-center justify-center gap-4">
-            <span className="inline-flex items-center gap-1.5 font-semibold text-neutral-600">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              Payfast ID Mobile App
-            </span>
-            <span>•</span>
-            <span>Tersedia segera di Google Play Store & Apple App Store</span>
+          <div className="mt-8 p-5 rounded-2xl bg-white/90 backdrop-blur-sm border border-neutral-200/80 text-center shadow-xs space-y-3">
+            <div className="flex flex-wrap items-center justify-center gap-2 text-xs text-neutral-600">
+              <span className="inline-flex items-center gap-1.5 font-bold text-secondary-800">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                Payfast ID Mobile App
+              </span>
+              <span>—</span>
+              <span>Transaksi pulsa & PPOB kini lebih praktis dari genggaman</span>
+            </div>
+            <div className="flex justify-center">
+              <AppDownloadBadges size="md" />
+            </div>
           </div>
         </div>
       </Container>

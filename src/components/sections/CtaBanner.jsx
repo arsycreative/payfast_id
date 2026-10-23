@@ -3,6 +3,7 @@ import { MessageCircle, Mail, ArrowRight } from "lucide-react";
 import { homeContent } from "@/content/home";
 import { Container } from "@/components/shared/Container";
 import { Button } from "@/components/ui/Button";
+import { AppDownloadBadges } from "@/components/shared/AppDownloadBadges";
 import { Reveal } from "@/components/shared/Reveal";
 
 export function CtaBanner({
@@ -51,6 +52,14 @@ export function CtaBanner({
                 >
                   {homeContent.ctaBanner.secondaryCta.label}
                 </Button>
+              </div>
+
+              {/* Mobile App Download Teaser */}
+              <div className="pt-6 border-t border-white/15 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <span className="text-xs font-semibold text-white/90">
+                  Aplikasi Mobile Segera Hadir:
+                </span>
+                <AppDownloadBadges size="sm" variant="dark" />
               </div>
             </div>
           </div>
