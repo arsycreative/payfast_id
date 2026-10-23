@@ -9,7 +9,7 @@ export const contactSchema = z.object({
   email: z.string().email("Format email tidak valid"),
   phone: z
     .string()
-    .regex(/^(\+62|62|0)[0-9]{8,13}$/, "Nomor WhatsApp tidak valid (contoh: 08123456789)")
+    .regex(/^(\+62|62|0)[0-9]{8,13}$/, "Nomor WhatsApp tidak valid (contoh: 08126666115)")
     .optional()
     .or(z.literal("")),
   topic: z.enum(["pelanggan", "kemitraan", "integrasi", "lainnya"], {

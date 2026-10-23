@@ -80,12 +80,12 @@ export const homeContent = {
     ],
   },
   stats: {
-    title: "Dipercaya Ribuan Pelanggan di Seluruh Indonesia",
+    title: "Standar Keandalan & Komitmen Layanan Kami",
     items: [
-      { value: "50.000+", label: "Transaksi per bulan" },
-      { value: "5.000+", label: "Mitra & agen aktif" },
-      { value: "99.9%", label: "Uptime sistem" },
-      { value: "24/7", label: "Dukungan pelanggan" },
+      { value: "99.9%", label: "Uptime Server & Sistem" },
+      { value: "24/7", label: "Transaksi Otomatis Nonstop" },
+      { value: "100%", label: "Garansi Transaksi Aman" },
+      { value: "500+", label: "Pilihan Produk Digital" },
     ],
   },
   howItWorks: {
@@ -221,7 +221,7 @@ export const homeContent = {
       "Hubungi tim kami sekarang dan temukan kemudahan isi ulang produk digital maupun peluang bisnis kemitraan yang menguntungkan.",
     primaryCta: {
       label: "Chat via WhatsApp",
-      href: "https://wa.me/6281234567890?text=Halo%20Payfast%20ID,%20saya%20ingin%20tanya%20tentang%20layanan.",
+      href: "https://wa.me/628126666115?text=Halo%20Payfast%20ID,%20saya%20ingin%20tanya%20tentang%20layanan.",
     },
     secondaryCta: {
       label: "Kirim Formulir Pesan",

@@ -116,7 +116,7 @@ export default function MemberAreaPage() {
                     <input
                       type="tel"
                       disabled
-                      placeholder="Contoh: 081234567890"
+                      placeholder="Contoh: 08126666115"
                       className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/70 text-sm text-neutral-500 cursor-not-allowed"
                     />
                   </div>
@@ -198,7 +198,7 @@ export default function MemberAreaPage() {
                     <input
                       type="tel"
                       disabled
-                      placeholder="081234567890"
+                      placeholder="08126666115"
                       className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-neutral-200 bg-neutral-50/70 text-sm text-neutral-500 cursor-not-allowed"
                     />
                   </div>

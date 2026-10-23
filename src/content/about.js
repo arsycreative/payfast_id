@@ -16,7 +16,7 @@ export const aboutContent = {
     paragraphs: [
       "Payfast ID didirikan dengan sebuah tekad sederhana: membuat pengisian ulang pulsa dan kebutuhan digital masyarakat Indonesia menjadi semudah sentuhan jari, tanpa antrean, dan tanpa ketidakpastian.",
       "Berawal dari sekelompok kecil pemuda yang kerap mengalami kendala saat kehabisan kuota atau token listrik di tengah malam, kami membangun infrastruktur server otomatis yang dapat memproses transaksi dalam hitungan detik secara reliabel.",
-      "Hari ini, Payfast ID telah berkembang melayani puluhan ribu pelanggan langsung serta menaungi ribuan konter mitra UMKM di seluruh pelosok Indonesia. Kami bangga dapat berkontribusi dalam perputaran ekonomi digital nasional.",
+      "Hari ini, Payfast ID terus berkembang menyediakan infrastruktur transaksi digital yang mudah, cepat, dan transparan bagi masyarakat serta pelaku usaha konter di berbagai wilayah Indonesia.",
     ],
   },
   visionMission: {

@@ -173,7 +173,7 @@ export function ContactForm({ defaultTopic = "pelanggan" }) {
           <Input
             label="Nomor WhatsApp (Opsional)"
             type="tel"
-            placeholder="081234567890"
+            placeholder="08126666115"
             helperText="Diutamakan untuk respon cepat via chat"
             error={errors.phone?.message}
             {...register("phone")}

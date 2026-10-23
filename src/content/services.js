@@ -24,7 +24,7 @@ export const services = [
     ],
     cta: {
       label: "Beli Sekarang",
-      href: "https://wa.me/6281234567890?text=Halo%20Payfast%20ID,%20saya%20ingin%20beli%20pulsa.",
+      href: "https://wa.me/628126666115?text=Halo%20Payfast%20ID,%20saya%20ingin%20beli%20pulsa.",
     },
   },
   {
@@ -49,7 +49,7 @@ export const services = [
     ],
     cta: {
       label: "Pesan Paket Data",
-      href: "https://wa.me/6281234567890?text=Halo%20Payfast%20ID,%20saya%20ingin%20beli%20paket%20data.",
+      href: "https://wa.me/628126666115?text=Halo%20Payfast%20ID,%20saya%20ingin%20beli%20paket%20data.",
     },
   },
   {
@@ -75,7 +75,7 @@ export const services = [
     ],
     cta: {
       label: "Beli Token PLN",
-      href: "https://wa.me/6281234567890?text=Halo%20Payfast%20ID,%20saya%20ingin%20beli%20token%20listrik.",
+      href: "https://wa.me/628126666115?text=Halo%20Payfast%20ID,%20saya%20ingin%20beli%20token%20listrik.",
     },
   },
   {
@@ -100,7 +100,7 @@ export const services = [
     ],
     cta: {
       label: "Top Up Sekarang",
-      href: "https://wa.me/6281234567890?text=Halo%20Payfast%20ID,%20saya%20ingin%20top%20up%20e-wallet.",
+      href: "https://wa.me/628126666115?text=Halo%20Payfast%20ID,%20saya%20ingin%20top%20up%20e-wallet.",
     },
   },
   {
@@ -125,7 +125,7 @@ export const services = [
     ],
     cta: {
       label: "Top Up Game",
-      href: "https://wa.me/6281234567890?text=Halo%20Payfast%20ID,%20saya%20ingin%20top%20up%20game.",
+      href: "https://wa.me/628126666115?text=Halo%20Payfast%20ID,%20saya%20ingin%20top%20up%20game.",
     },
   },
   {
@@ -150,7 +150,7 @@ export const services = [
     ],
     cta: {
       label: "Bayar Tagihan",
-      href: "https://wa.me/6281234567890?text=Halo%20Payfast%20ID,%20saya%20ingin%20bayar%20tagihan.",
+      href: "https://wa.me/628126666115?text=Halo%20Payfast%20ID,%20saya%20ingin%20bayar%20tagihan.",
     },
   },
   {
@@ -193,7 +193,7 @@ export const services = [
     ],
     cta: {
       label: "Hubungi Support",
-      href: "https://wa.me/6281234567890?text=Halo%20Tim%20Support%20Payfast%20ID,%20saya%20memerlukan%20bantuan.",
+      href: "https://wa.me/628126666115?text=Halo%20Tim%20Support%20Payfast%20ID,%20saya%20memerlukan%20bantuan.",
     },
   },
 ];

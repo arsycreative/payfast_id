@@ -16,7 +16,7 @@ export function Stats() {
       <Container className="relative">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <p className="text-xs uppercase font-bold tracking-widest text-primary-400 mb-2">
-            PENCAPAIAN LAYANAN
+            STANDAR KEANDALAN
           </p>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
             {stats.title}
