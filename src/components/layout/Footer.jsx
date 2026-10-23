@@ -102,6 +102,22 @@ export function Footer() {
                   Integrasi H2H/API
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="hover:text-primary-400 transition-colors inline-block text-neutral-400"
+                >
+                  Syarat & Ketentuan
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="hover:text-primary-400 transition-colors inline-block text-neutral-400"
+                >
+                  Kebijakan Privasi
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -160,9 +176,25 @@ export function Footer() {
 
         {/* Bottom row */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
-          <p>© 2026 Payfast ID. Hak cipta dilindungi.</p>
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-1">
+            <p>© 2026 Payfast ID. Hak cipta dilindungi.</p>
+            <span className="hidden sm:inline text-neutral-700">•</span>
+            <Link
+              href="/terms"
+              className="hover:text-primary-400 transition-colors underline-offset-4 hover:underline"
+            >
+              Syarat & Ketentuan
+            </Link>
+            <span className="text-neutral-700">•</span>
+            <Link
+              href="/privacy"
+              className="hover:text-primary-400 transition-colors underline-offset-4 hover:underline"
+            >
+              Kebijakan Privasi
+            </Link>
+          </div>
           <div className="flex items-center gap-4">
-            <span>Isi Ulang Cepat, Aman, Terpercaya</span>
+            <span className="hidden md:inline">Isi Ulang Cepat, Aman, Terpercaya</span>
             <span className="inline-flex items-center gap-1 text-emerald-400">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               Sistem Aktif 24 Jam
