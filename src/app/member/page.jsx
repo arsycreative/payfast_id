@@ -10,7 +10,6 @@ import {
   Smartphone,
   Store,
   KeyRound,
-  ShieldAlert,
   ArrowRight,
   MessageCircle,
   Sparkles,
@@ -60,24 +59,8 @@ export default function MemberAreaPage() {
               </p>
             </div>
 
-            {/* Announcement Banner: Coming Soon to Mobile App */}
-            <div className="my-6 p-4 sm:p-5 rounded-2xl bg-amber-50/80 border border-amber-200/90 flex flex-col sm:flex-row items-start gap-3.5">
-              <ShieldAlert className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-              <div className="space-y-3 flex-1">
-                <div>
-                  <p className="text-xs sm:text-sm font-bold text-amber-900">
-                    Aplikasi Mobile Segera Hadir di Play Store & App Store!
-                  </p>
-                  <p className="text-xs text-amber-800 leading-relaxed mt-0.5">
-                    Fitur autentikasi web sedang dalam sinkronisasi dengan aplikasi resmi Payfast ID. Klik tombol unduh di bawah untuk cek status peluncuran aplikasi:
-                  </p>
-                </div>
-                <AppDownloadBadges size="sm" showBadge />
-              </div>
-            </div>
-
             {/* Tab Navigation: Login vs Register */}
-            <div className="grid grid-cols-2 p-1.5 rounded-2xl bg-neutral-100 mb-8 border border-neutral-200/60">
+            <div className="grid grid-cols-2 p-1.5 rounded-2xl bg-neutral-100 my-8 border border-neutral-200/60">
               <button
                 type="button"
                 onClick={() => setActiveTab("login")}
