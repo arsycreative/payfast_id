@@ -1,5 +1,5 @@
 // src/components/sections/PartnershipDetail.jsx
-import { Store, Code2, Check, ArrowRight, UserCheck, Key, Rocket } from "lucide-react";
+import { Store, Code2, Check, ArrowRight, Download, UserPlus, Wallet, Rocket } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Card } from "@/components/ui/Card";
@@ -10,26 +10,26 @@ export function PartnershipDetail() {
   const steps = [
     {
       step: "1",
-      title: "Hubungi Kami",
-      desc: "Isi form kontak kemitraan atau chat tim sales via WhatsApp.",
-      icon: Store,
+      title: "Download",
+      desc: "Unduh aplikasi Payfast ID di Google Play Store atau Apple App Store secara gratis.",
+      icon: Download,
     },
     {
       step: "2",
-      title: "Verifikasi Data",
-      desc: "Tim kami mengonfirmasi nomor konter atau profil teknis bisnismu.",
-      icon: UserCheck,
+      title: "Daftar",
+      desc: "Lakukan registrasi akun agen baru dengan mudah dan cepat melalui aplikasi.",
+      icon: UserPlus,
     },
     {
       step: "3",
-      title: "Aktivasi Akun",
-      desc: "Dapatkan akses harga modal agen atau API Key & webhook.",
-      icon: Key,
+      title: "Topup Saldo",
+      desc: "Isi saldo deposit via transfer bank, e-wallet, atau QRIS instan 24 jam.",
+      icon: Wallet,
     },
     {
       step: "4",
       title: "Mulai Bertransaksi",
-      desc: "Langsung lakukan transaksi dan nikmati margin keuntungan optimal.",
+      desc: "Langsung jual pulsa & produk digital dan nikmati margin keuntungan modal agen.",
       icon: Rocket,
     },
   ];
@@ -137,10 +137,10 @@ export function PartnershipDetail() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-xs font-bold tracking-widest uppercase text-primary-600 mb-1 block">
-              LANGKAH BERGABUNG
+              ALUR BERGABUNG
             </span>
             <h3 className="text-2xl font-bold text-secondary-800 font-heading">
-              Alur Mudah Menjadi Mitra Payfast ID
+              Alur Bergabung Menjadi Mitra Payfast ID
             </h3>
           </div>
 

@@ -22,7 +22,7 @@ export const faqs = [
   {
     question: "Bagaimana cara mendaftar menjadi mitra agen konter Payfast ID?",
     answer:
-      "Caranya sangat mudah! Kamu cukup mengisi formulir kemitraan di halaman Kontak (pilih topik 'Kemitraan Agen'), atau klik tombol pendaftaran WhatsApp. Tim kemitraan kami akan memandu langkah demi langkah tanpa dipungut biaya pendaftaran.",
+      "Caranya sangat mudah melalui 4 langkah praktis: (1) Download aplikasi Payfast ID, (2) Lakukan pendaftaran akun agen baru secara gratis, (3) Topup saldo deposit via bank/QRIS, dan (4) Mulai bertransaksi dengan harga modal distributor terbaik.",
     category: "kemitraan",
   },
   {
