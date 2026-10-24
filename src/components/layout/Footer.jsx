@@ -96,6 +96,14 @@ export function Footer() {
               ))}
               <li>
                 <Link
+                  href="/member"
+                  className="hover:text-primary-400 transition-colors inline-block"
+                >
+                  Member Area
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/member?tab=register"
                   className="hover:text-primary-400 transition-colors inline-block"
                 >
