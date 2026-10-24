@@ -20,8 +20,9 @@ export function ContactInfo() {
       value: "Cilacap, Jawa Tengah",
       company: site.companyName || "CV. PAYFAST INDONESIA",
       desc: site.contact.address,
-      href: "https://maps.google.com/?q=CV.+PAYFAST+INDONESIA+Karangbenda+Adipala+Cilacap",
+      href: null,
       actionLabel: "Lihat di Google Maps",
+      disabled: true,
       icon: MapPin,
       highlight: false,
     },
@@ -76,7 +77,17 @@ export function ContactInfo() {
               </p>
             </div>
 
-            {card.href && (
+            {card.disabled ? (
+              <div
+                className="text-xs font-semibold text-neutral-400 inline-flex items-center gap-1.5 mt-2 pt-3 border-t border-neutral-100 cursor-not-allowed select-none"
+                title="Tautan Google Maps sedang disiapkan"
+              >
+                <span>{card.actionLabel}</span>
+                <span className="text-[10px] px-1.5 py-0.5 rounded bg-neutral-100 text-neutral-500 font-medium">
+                  Segera Hadir
+                </span>
+              </div>
+            ) : card.href ? (
               <a
                 href={card.href}
                 target={card.href.startsWith("http") ? "_blank" : undefined}
@@ -86,7 +97,7 @@ export function ContactInfo() {
                 <span>{card.actionLabel}</span>
                 <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
-            )}
+            ) : null}
           </Card>
         );
       })}
