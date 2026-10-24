@@ -1,8 +1,6 @@
 // src/components/sections/CtaBanner.jsx
-import { MessageCircle, Mail, ArrowRight } from "lucide-react";
 import { homeContent } from "@/content/home";
 import { Container } from "@/components/shared/Container";
-import { Button } from "@/components/ui/Button";
 import { AppDownloadBadges } from "@/components/shared/AppDownloadBadges";
 import { Reveal } from "@/components/shared/Reveal";
 
@@ -32,34 +30,9 @@ export function CtaBanner({
                 {description}
               </p>
 
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 pt-4">
-                <Button
-                  href={homeContent.ctaBanner.primaryCta.href}
-                  variant="white"
-                  size="lg"
-                  icon={MessageCircle}
-                  className="w-full sm:w-auto text-primary-600 hover:text-primary-700"
-                >
-                  {homeContent.ctaBanner.primaryCta.label}
-                </Button>
-                <Button
-                  href={homeContent.ctaBanner.secondaryCta.href}
-                  variant="outline"
-                  size="lg"
-                  icon={ArrowRight}
-                  iconPosition="right"
-                  className="w-full sm:w-auto bg-transparent border-white/40 text-white hover:bg-white/15 hover:border-white"
-                >
-                  {homeContent.ctaBanner.secondaryCta.label}
-                </Button>
-              </div>
-
-              {/* Mobile App Download Teaser */}
-              <div className="pt-6 border-t border-white/15 flex flex-col sm:flex-row items-center justify-center gap-3">
-                <span className="text-xs font-semibold text-white/90">
-                  Aplikasi Mobile Segera Hadir:
-                </span>
-                <AppDownloadBadges size="sm" variant="dark" />
+              {/* Action: Google Play & App Store Badges */}
+              <div className="pt-2 flex justify-center">
+                <AppDownloadBadges size="lg" variant="dark" className="justify-center" />
               </div>
             </div>
           </div>
