@@ -22,3 +22,12 @@ RewriteRule ^(.*?)/?$ $1.html [L]
   Header set X-Frame-Options "SAMEORIGIN"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
+
+# Force immediate refresh for favicons and logo (prevent browser & proxy caching)
+<FilesMatch "(favicon|apple-touch-icon|logo)">
+  <IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </IfModule>
+</FilesMatch>

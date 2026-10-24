@@ -33,12 +33,14 @@ export const metadata = {
   description: site.description,
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon.ico?v=20261024", type: "image/x-icon" },
+      { url: "/favicon-32x32.png?v=20261024", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png?v=20261024", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-192x192.png?v=20261024", sizes: "192x192", type: "image/png" },
     ],
+    shortcut: ["/favicon.ico?v=20261024"],
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/apple-touch-icon.png?v=20261024", sizes: "180x180", type: "image/png" },
     ],
   },
   keywords: [
@@ -100,6 +102,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id" className={`${inter.variable} ${jakarta.variable}`}>
       <head>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=20261024" />
+        <link rel="shortcut icon" href="/favicon.ico?v=20261024" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20261024" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20261024" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png?v=20261024" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20261024" />
         <JsonLd data={orgSchema} />
         <JsonLd data={webSiteSchema} />
       </head>
