@@ -72,7 +72,7 @@ export function Footer() {
 
             <div className="pt-3 space-y-2">
               <p className="text-xs font-bold uppercase tracking-wider text-neutral-400">
-                Aplikasi Payfast ID
+                Mobile App
               </p>
               <AppDownloadBadges size="sm" variant="dark" />
             </div>
