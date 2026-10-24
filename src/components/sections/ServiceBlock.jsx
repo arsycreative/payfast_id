@@ -9,11 +9,10 @@ import {
   Handshake,
   Headset,
   Check,
-  MessageCircle,
   Layers,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/Button";
+import { DownloadButton } from "@/components/shared/DownloadButton";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/shared/Reveal";
 
@@ -137,24 +136,8 @@ export function ServiceBlock({ service, index }) {
 
           {/* Action button */}
           <Reveal delay={0.4}>
-            <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <Button
-                href={service.cta.href}
-                variant="primary"
-                size="md"
-                icon={MessageCircle}
-                className="w-full sm:w-auto"
-              >
-                {service.cta.label}
-              </Button>
-              <Button
-                href={`/contact?topik=${service.slug === "kemitraan" ? "kemitraan" : "pelanggan"}`}
-                variant="outline"
-                size="md"
-                className="w-full sm:w-auto"
-              >
-                Konsultasi Layanan
-              </Button>
+            <div className="pt-4 flex items-center">
+              <DownloadButton size="md" className="w-full sm:w-auto" />
             </div>
           </Reveal>
         </div>

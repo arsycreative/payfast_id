@@ -20,6 +20,7 @@ export const site = {
     youtube: "https://youtube.com/@payfastid",
   },
   whatsappMessage: "Halo Payfast ID, saya ingin bertanya tentang layanan.",
+  downloadAppUrl: "/", // URL aplikasi (sementara diarahkan ke home "/")
   nav: [
     { label: "Home", href: "/" },
     { label: "Layanan", href: "/services" },
