@@ -133,7 +133,7 @@ export const homeContent = {
           "Tanpa biaya pendaftaran atau iuran bulanan",
         ],
         ctaText: "Mulai Sekarang",
-        ctaHref: "/contact?topik=pelanggan",
+        ctaHref: "/member",
         isPopular: false,
       },
       {
@@ -166,7 +166,7 @@ export const homeContent = {
           "Dedicated Account Manager & SLA responsif",
         ],
         ctaText: "Hubungi Tim Sales",
-        ctaHref: "/contact?topik=integrasi",
+        ctaHref: "/member",
         isPopular: false,
       },
     ],
