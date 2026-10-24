@@ -2,6 +2,7 @@
 import Link from "next/link";
 import {
   Phone,
+  Mail,
   MapPin,
   Clock,
   Send,
@@ -181,6 +182,15 @@ export function Footer() {
                   className="hover:text-primary-400 transition-colors text-xs"
                 >
                   {site.contact.whatsappDisplay}
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-primary-400 shrink-0" />
+                <a
+                  href={`mailto:${site.contact.email}`}
+                  className="hover:text-primary-400 transition-colors text-xs"
+                >
+                  {site.contact.email}
                 </a>
               </li>
               <li className="flex items-start gap-2.5">

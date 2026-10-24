@@ -18,7 +18,7 @@ export const site = {
   contact: {
     whatsapp: "6281234567890",           // format internasional tanpa +
     whatsappDisplay: "+62 812-3456-7890",
-    email: "halo@payfast.id",
+    email: "support@payfast.id",
     address: "Jl. Contoh Raya No. 123, Bandung, Jawa Barat 40111, Indonesia",
     hours: "Senin – Minggu, 07.00 – 22.00 WIB",
   },

@@ -13,7 +13,7 @@ export const site = {
     nib: "1611230092272",
     whatsapp: "628126666115", // format internasional tanpa +
     whatsappDisplay: "+62 812-6666-115",
-    email: "halo@payfast.id",
+    email: "support@payfast.id",
     city: "Cilacap, Jawa Tengah",
     address:
       "Jl Srandil No.18 RT. 001 RW. 001 Karangbenda, Kec. Adipala, Kab. Cilacap, Jawa Tengah 53271",

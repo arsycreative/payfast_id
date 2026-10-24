@@ -1,5 +1,5 @@
 // src/components/sections/ContactInfo.jsx
-import { MessageCircle, MapPin, Clock, ArrowUpRight } from "lucide-react";
+import { MessageCircle, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react";
 import { site } from "@/content/site";
 import { Card } from "@/components/ui/Card";
 import { waLink } from "@/lib/utils";
@@ -14,6 +14,15 @@ export function ContactInfo() {
       actionLabel: "Kirim Pesan WhatsApp",
       icon: MessageCircle,
       highlight: true,
+    },
+    {
+      title: "Email Support",
+      value: site.contact.email,
+      desc: "Pertanyaan formal, penawaran integrasi API/H2H, dan layanan pelanggan.",
+      href: `mailto:${site.contact.email}`,
+      actionLabel: "Kirim Email",
+      icon: Mail,
+      highlight: false,
     },
     {
       title: "Alamat Kantor",
@@ -38,7 +47,7 @@ export function ContactInfo() {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {cards.map((card, idx) => {
         const Icon = card.icon;
         return (
