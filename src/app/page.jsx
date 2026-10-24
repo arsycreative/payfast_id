@@ -18,6 +18,32 @@ export const metadata = {
   alternates: {
     canonical: "/",
   },
+  openGraph: {
+    title: "Payfast ID — Isi Ulang Pulsa & Produk Digital Cepat, Aman, Terpercaya",
+    description:
+      "Beli pulsa, paket data, token PLN, e-wallet, dan voucher game proses otomatis 5–15 detik. Transaksi aman bergaransi, harga modal agen bersaing. Resmi CV. PAYFAST INDONESIA.",
+    url: "https://payfast.id",
+    siteName: "Payfast ID",
+    images: [
+      {
+        url: "https://payfast.id/og-image.png",
+        secureUrl: "https://payfast.id/og-image.png",
+        width: 1200,
+        height: 630,
+        type: "image/png",
+        alt: "Payfast ID — Isi Ulang Pulsa & Produk Digital",
+      },
+    ],
+    locale: "id_ID",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Payfast ID — Isi Ulang Pulsa & Produk Digital Cepat, Aman, Terpercaya",
+    description:
+      "Beli pulsa, paket data, token PLN, e-wallet, dan voucher game proses otomatis 5–15 detik. Transaksi aman bergaransi, harga modal agen bersaing. Resmi CV. PAYFAST INDONESIA.",
+    images: ["https://payfast.id/og-image.png"],
+  },
 };
 
 export default function HomePage() {

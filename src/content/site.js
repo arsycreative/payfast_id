@@ -5,7 +5,7 @@ export const site = {
   companyName: "CV. PAYFAST INDONESIA",
   tagline: "Isi Ulang Cepat, Aman, Terpercaya",
   description:
-    "Payfast ID menyediakan pulsa, paket data, token listrik, e-wallet, dan voucher game dengan proses cepat dan harga bersaing.",
+    "Beli pulsa all operator, kuota internet, token listrik PLN, top up e-wallet, dan voucher game dengan proses otomatis 5–15 detik. Transaksi aman, harga modal agen bersaing. Resmi CV. PAYFAST INDONESIA.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://payfast.id",
   contact: {
     company: "CV. PAYFAST INDONESIA",

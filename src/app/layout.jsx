@@ -66,10 +66,12 @@ export const metadata = {
     description: site.description,
     images: [
       {
-        url: "/og-image.png",
+        url: `${site.url}/og-image.png`,
+        secureUrl: `${site.url}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "Payfast ID — Isi Ulang Cepat, Aman, Terpercaya",
+        type: "image/png",
+        alt: `${site.name} — ${site.tagline}`,
       },
     ],
   },
@@ -77,7 +79,7 @@ export const metadata = {
     card: "summary_large_image",
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
-    images: ["/og-image.png"],
+    images: [`${site.url}/og-image.png`],
   },
   alternates: {
     canonical: "/",
@@ -108,6 +110,15 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20261024" />
         <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png?v=20261024" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20261024" />
+        {/* Open Graph & Social Share Preview tags for WhatsApp & Social Media */}
+        <meta property="og:image" content={`${site.url}/og-image.png`} />
+        <meta property="og:image:secure_url" content={`${site.url}/og-image.png`} />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Payfast ID — Isi Ulang Pulsa & Produk Digital" />
+        <meta name="twitter:image" content={`${site.url}/og-image.png`} />
+        <meta name="twitter:image:alt" content="Payfast ID — Isi Ulang Pulsa & Produk Digital" />
         <JsonLd data={orgSchema} />
         <JsonLd data={webSiteSchema} />
       </head>
