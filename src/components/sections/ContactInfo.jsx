@@ -17,9 +17,10 @@ export function ContactInfo() {
     },
     {
       title: "Alamat Kantor",
-      value: "Bandung, Jawa Barat",
+      value: "Cilacap, Jawa Tengah",
+      company: site.companyName || "CV. PAYFAST INDONESIA",
       desc: site.contact.address,
-      href: "https://maps.google.com/?q=Bandung,+Indonesia",
+      href: "https://maps.google.com/?q=CV.+PAYFAST+INDONESIA+Karangbenda+Adipala+Cilacap",
       actionLabel: "Lihat di Google Maps",
       icon: MapPin,
       highlight: false,
@@ -65,6 +66,11 @@ export function ContactInfo() {
               <h3 className="text-lg font-bold font-heading text-secondary-800 mb-2">
                 {card.value}
               </h3>
+              {card.company && (
+                <p className="text-xs font-bold text-primary-600 mb-1">
+                  {card.company}
+                </p>
+              )}
               <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-4">
                 {card.desc}
               </p>

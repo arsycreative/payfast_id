@@ -50,7 +50,7 @@ export default function PrivacyPage() {
                 1. Komitmen Perlindungan Data Anda
               </h2>
               <p>
-                Di <strong>Payfast ID</strong>, privasi dan keamanan informasi pengguna adalah prioritas tertinggi kami. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, menyimpan, dan melindungi informasi pribadi Anda saat menggunakan platform transaksi pulsa dan produk digital kami.
+                Di <strong>Payfast ID</strong> (<strong>CV. PAYFAST INDONESIA</strong>), privasi dan keamanan informasi pengguna adalah prioritas tertinggi kami. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, menyimpan, dan melindungi informasi pribadi Anda saat menggunakan platform transaksi pulsa dan produk digital kami.
               </p>
             </div>
 

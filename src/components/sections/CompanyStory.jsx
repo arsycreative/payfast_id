@@ -55,7 +55,7 @@ export function CompanyStory() {
                         Tahun 2020
                       </p>
                       <p className="text-xs text-neutral-400">
-                        Didirikan di Bandung, Jawa Barat
+                        Berpusat di Cilacap, Jawa Tengah
                       </p>
                     </div>
                   </div>

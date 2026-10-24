@@ -158,6 +158,9 @@ export function Footer() {
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-primary-400 shrink-0 mt-0.5" />
                 <span className="text-xs leading-relaxed text-neutral-400">
+                  <strong className="block text-white font-semibold mb-0.5">
+                    {site.companyName || "CV. PAYFAST INDONESIA"}
+                  </strong>
                   {site.contact.address}
                 </span>
               </li>
@@ -185,7 +188,7 @@ export function Footer() {
         {/* Bottom row */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-1">
-            <p>© 2026 Payfast ID. Hak cipta dilindungi.</p>
+            <p>© 2026 {site.companyName || "CV. PAYFAST INDONESIA"}. Hak cipta dilindungi.</p>
             <span className="hidden sm:inline text-neutral-700">•</span>
             <Link
               href="/terms"

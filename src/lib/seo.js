@@ -6,12 +6,16 @@ export function getOrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: site.name,
+    legalName: site.companyName,
     url: site.url,
     logo: `${site.url}/logo.png`,
     description: site.description,
     address: {
       "@type": "PostalAddress",
       streetAddress: site.contact.address,
+      addressLocality: "Cilacap",
+      addressRegion: "Jawa Tengah",
+      postalCode: "53271",
       addressCountry: "ID",
     },
     contactPoint: {

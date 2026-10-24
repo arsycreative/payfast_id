@@ -7,8 +7,8 @@ export function MapEmbed() {
   return (
     <div className="rounded-3xl overflow-hidden border border-neutral-200/80 shadow-md relative bg-neutral-100 h-96">
       <iframe
-        title="Lokasi Kantor Payfast ID"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.5634786224!2d107.5731168!3d-6.9034443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6398252477f%3A0x146a1f93d3e0f5f0!2sBandung%2C%20Bandung%20City%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
+        title="Lokasi Kantor CV. PAYFAST INDONESIA"
+        src="https://maps.google.com/maps?q=Karangbenda%2C+Kec.+Adipala%2C+Kabupaten+Cilacap%2C+Jawa+Tengah+53271&t=&z=14&ie=UTF8&iwloc=&output=embed"
         width="100%"
         height="100%"
         style={{ border: 0 }}
@@ -25,7 +25,7 @@ export function MapEmbed() {
             <MapPin className="w-5 h-5" />
           </div>
           <div className="text-xs">
-            <p className="font-bold text-secondary-800">Kantor Operasional Payfast ID</p>
+            <p className="font-bold text-secondary-800">{site.companyName || "CV. PAYFAST INDONESIA"}</p>
             <p className="text-neutral-600 mt-0.5 leading-relaxed">{site.contact.address}</p>
           </div>
         </div>

@@ -2,15 +2,19 @@
 
 export const site = {
   name: "Payfast ID",
+  companyName: "CV. PAYFAST INDONESIA",
   tagline: "Isi Ulang Cepat, Aman, Terpercaya",
   description:
     "Payfast ID menyediakan pulsa, paket data, token listrik, e-wallet, dan voucher game dengan proses cepat dan harga bersaing.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://payfast.id",
   contact: {
+    company: "CV. PAYFAST INDONESIA",
     whatsapp: "628126666115", // format internasional tanpa +
     whatsappDisplay: "+62 812-6666-115",
     email: "halo@payfast.id",
-    address: "Jl. Contoh Raya No. 123, Bandung, Jawa Barat 40111, Indonesia",
+    city: "Cilacap, Jawa Tengah",
+    address:
+      "Jl Srandil No.18 RT. 001 RW. 001 Karangbenda, Kec. Adipala, Kab. Cilacap, Jawa Tengah 53271",
     hours: "Senin – Minggu, 07.00 – 22.00 WIB",
   },
   social: {
