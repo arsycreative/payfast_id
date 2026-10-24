@@ -4,9 +4,9 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { MessageCircle, CheckCircle2, AlertCircle } from "lucide-react";
 import { contactSchema } from "@/lib/validations";
-import { submitContact } from "@/app/contact/actions";
+import { waLink } from "@/lib/utils";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { Select } from "@/components/ui/Select";
@@ -21,14 +21,14 @@ const topicOptions = [
 
 export function ContactForm({ defaultTopic = "pelanggan" }) {
   const [serverStatus, setServerStatus] = useState({
-    state: "idle", // 'idle' | 'loading' | 'success' | 'error'
+    state: "idle", // 'idle' | 'success' | 'error'
     message: "",
+    waUrl: "",
   });
 
   const {
     register,
     handleSubmit,
-    reset,
     setValue,
     formState: { errors, isSubmitting },
   } = useForm({
@@ -54,38 +54,48 @@ export function ContactForm({ defaultTopic = "pelanggan" }) {
     }
   }, [setValue]);
 
-  const onSubmit = async (data) => {
-    setServerStatus({ state: "loading", message: "" });
+  const onSubmit = (data) => {
     try {
-      const res = await submitContact(data);
-      if (res.ok) {
-        setServerStatus({
-          state: "success",
-          message:
-            res.message ||
-            "Terima kasih! Pesanmu sudah kami terima. Tim Payfast ID akan membalas dalam 1×24 jam.",
-        });
-        reset({
-          name: "",
-          email: "",
-          phone: "",
-          topic: validTopic,
-          message: "",
-          consent: false,
-          website: "",
-        });
-      } else {
-        setServerStatus({
-          state: "error",
-          message:
-            res.error ||
-            "Maaf, pesan belum berhasil terkirim. Silakan coba lagi atau hubungi via WhatsApp.",
-        });
+      // Honeypot spam field check
+      if (data.website && data.website.length > 0) {
+        return;
       }
+
+      const topicLabel =
+        topicOptions.find((t) => t.value === data.topic)?.label || data.topic;
+
+      const waText = [
+        `*Halo Tim Payfast ID, saya ingin mengirim pesan dari website:*`,
+        ``,
+        `👤 *Nama:* ${data.name.trim()}`,
+        `✉️ *Email:* ${data.email.trim()}`,
+        data.phone?.trim() ? `📱 *No. WhatsApp/HP:* ${data.phone.trim()}` : null,
+        `📌 *Topik:* ${topicLabel}`,
+        ``,
+        `💬 *Isi Pesan:*`,
+        `${data.message.trim()}`,
+      ]
+        .filter((line) => line !== null)
+        .join("\n");
+
+      const link = waLink(waText);
+
+      // Buka WhatsApp di tab/jendela baru
+      if (typeof window !== "undefined") {
+        window.open(link, "_blank", "noopener,noreferrer");
+      }
+
+      setServerStatus({
+        state: "success",
+        message: "Pesanmu telah disiapkan dan diarahkan ke WhatsApp resmi Payfast ID.",
+        waUrl: link,
+      });
     } catch (err) {
+      console.error("[Contact Form Error]", err);
       setServerStatus({
         state: "error",
-        message: "Terjadi gangguan koneksi. Silakan hubungi kami langsung via WhatsApp.",
+        message: "Terjadi kesalahan saat menyiapkan pesan. Silakan hubungi langsung via WhatsApp.",
+        waUrl: waLink("Halo Payfast ID, saya ingin bertanya tentang layanan."),
       });
     }
   };
@@ -93,11 +103,15 @@ export function ContactForm({ defaultTopic = "pelanggan" }) {
   return (
     <div className="bg-white rounded-3xl p-5 sm:p-8 md:p-10 border border-neutral-200/80 shadow-lg">
       <div className="mb-8">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#25D366]/10 text-[#128C7E] text-xs font-bold mb-3">
+          <MessageCircle className="w-4 h-4" />
+          Terhubung Langsung ke WhatsApp Customer Support
+        </div>
         <h3 className="text-2xl font-bold font-heading text-secondary-800 mb-2">
           Kirimkan Pesan atau Pertanyaan
         </h3>
         <p className="text-sm text-neutral-600">
-          Silakan isi formulir di bawah ini dengan lengkap. Tim kami siap merespons kebutuhanmu.
+          Silakan isi formulir di bawah ini. Pesan akan langsung diarahkan ke WhatsApp resmi Payfast ID untuk respons tercepat.
         </p>
       </div>
 
@@ -106,14 +120,27 @@ export function ContactForm({ defaultTopic = "pelanggan" }) {
         <div
           role="status"
           aria-live="polite"
-          className="mb-8 p-5 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-start gap-3.5 text-emerald-800"
+          className="mb-8 p-5 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-start gap-3.5 text-emerald-900"
         >
           <CheckCircle2 className="w-6 h-6 text-emerald-600 shrink-0 mt-0.5" />
-          <div className="space-y-1">
-            <p className="font-bold text-sm">Pesan Berhasil Terkirim!</p>
-            <p className="text-xs sm:text-sm text-emerald-700 leading-relaxed">
-              {serverStatus.message}
+          <div className="space-y-2 flex-grow">
+            <p className="font-bold text-sm">Membuka WhatsApp Resmi Payfast ID...</p>
+            <p className="text-xs sm:text-sm text-emerald-800 leading-relaxed">
+              {serverStatus.message} Jika aplikasi WhatsApp tidak terbuka secara otomatis, silakan klik tombol di bawah untuk melanjutkan chat:
             </p>
+            {serverStatus.waUrl && (
+              <div className="pt-1">
+                <a
+                  href={serverStatus.waUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold shadow-sm transition-all"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  Buka Chat WhatsApp Sekarang
+                </a>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -222,26 +249,22 @@ export function ContactForm({ defaultTopic = "pelanggan" }) {
         </div>
 
         {/* Submit Button */}
-        <div className="pt-2">
+        <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-3">
           <Button
             type="submit"
-            variant="primary"
+            variant="whatsapp"
             size="lg"
-            disabled={isSubmitting || serverStatus.state === "loading"}
-            className="w-full sm:w-auto"
+            disabled={isSubmitting}
+            className="w-full sm:w-auto shadow-md hover:shadow-lg"
           >
-            {isSubmitting || serverStatus.state === "loading" ? (
-              <span className="inline-flex items-center gap-2">
-                <Loader2 className="w-5 h-5 animate-spin" />
-                Mengirim Pesan...
-              </span>
-            ) : (
-              <span className="inline-flex items-center gap-2">
-                <Send className="w-5 h-5" />
-                Kirim Pesan Sekarang
-              </span>
-            )}
+            <span className="inline-flex items-center gap-2">
+              <MessageCircle className="w-5 h-5 fill-white" />
+              Kirim Pesan via WhatsApp
+            </span>
           </Button>
+          <span className="text-xs text-neutral-500">
+            Format pesan otomatis terisi & diteruskan ke WhatsApp CS
+          </span>
         </div>
       </form>
     </div>
