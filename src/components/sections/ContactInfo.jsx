@@ -19,6 +19,7 @@ export function ContactInfo() {
       title: "Alamat Kantor",
       value: "Cilacap, Jawa Tengah",
       company: site.companyName || "CV. PAYFAST INDONESIA",
+      nib: site.nib || "1611230092272",
       desc: site.contact.address,
       href: null,
       actionLabel: "Lihat di Google Maps",
@@ -68,9 +69,16 @@ export function ContactInfo() {
                 {card.value}
               </h3>
               {card.company && (
-                <p className="text-xs font-bold text-primary-600 mb-1">
-                  {card.company}
-                </p>
+                <div className="mb-2">
+                  <p className="text-xs font-bold text-secondary-800">
+                    {card.company}
+                  </p>
+                  {card.nib && (
+                    <p className="text-[11px] font-mono text-primary-600 font-medium">
+                      NIB: {card.nib}
+                    </p>
+                  )}
+                </div>
               )}
               <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-4">
                 {card.desc}

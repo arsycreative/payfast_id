@@ -146,9 +146,9 @@ export const aboutContent = {
     description:
       "Payfast ID berkomitmen menjalankan operasional usaha yang transparan, sah, dan mematuhi regulasi ketenagakerjaan serta perdagangan digital yang berlaku di Republik Indonesia.",
     badges: [
-      { label: "Badan Usaha", value: "PT Payfast Solusi Digital (Placeholder)" },
-      { label: "Nomor Induk Berusaha (NIB)", value: "1234567890123 (Placeholder)" },
-      { label: "Kementerian Kominfo", value: "PSE Terdaftar (Placeholder)" },
+      { label: "Badan Usaha", value: "CV. PAYFAST INDONESIA" },
+      { label: "Nomor Induk Berusaha (NIB)", value: "1611230092272" },
+      { label: "Kementerian Kominfo", value: "Sistem Elektronik Terdaftar" },
       { label: "Wilayah Operasional", value: "Seluruh Wilayah Republik Indonesia" },
     ],
   },

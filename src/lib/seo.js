@@ -7,6 +7,8 @@ export function getOrganizationSchema() {
     "@type": "Organization",
     name: site.name,
     legalName: site.companyName,
+    identifier: site.nib,
+    taxID: site.nib,
     url: site.url,
     logo: `${site.url}/logo.png`,
     description: site.description,

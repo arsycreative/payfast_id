@@ -3,12 +3,14 @@
 export const site = {
   name: "Payfast ID",
   companyName: "CV. PAYFAST INDONESIA",
+  nib: "1611230092272",
   tagline: "Isi Ulang Cepat, Aman, Terpercaya",
   description:
     "Beli pulsa all operator, kuota internet, token listrik PLN, top up e-wallet, dan voucher game dengan proses otomatis 5–15 detik. Transaksi aman, harga modal agen bersaing. Resmi CV. PAYFAST INDONESIA.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://payfast.id",
   contact: {
     company: "CV. PAYFAST INDONESIA",
+    nib: "1611230092272",
     whatsapp: "628126666115", // format internasional tanpa +
     whatsappDisplay: "+62 812-6666-115",
     email: "halo@payfast.id",
