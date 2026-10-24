@@ -1,5 +1,9 @@
 # .htaccess for LiteSpeed / Apache static Next.js
-Options -MultiViews
+DirectoryIndex index.html
+
+# Disable Directory Browsing (Security)
+Options -Indexes -MultiViews
+
 RewriteEngine On
 RewriteBase /
 
@@ -11,10 +15,17 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
 RewriteRule ^ %1 [R=301,L]
 
-# Serve clean URLs (e.g. /services -> /services.html, /about -> /about.html)
-RewriteCond %{REQUEST_FILENAME} !-d
+# If directory exists and has index.html, serve it directly
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.*)/?$ $1/index.html [L]
+
+# If .html file exists, serve it
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*?)/?$ $1.html [L]
+
+# Custom 404 Error Document
+ErrorDocument 404 /404.html
 
 # Security headers
 <IfModule mod_headers.c>
