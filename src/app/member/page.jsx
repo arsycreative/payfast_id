@@ -1,7 +1,7 @@
 "use client";
 
 // src/app/member/page.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -23,6 +23,16 @@ import { waLink } from "@/lib/utils";
 
 export default function MemberAreaPage() {
   const [activeTab, setActiveTab] = useState("login"); // 'login' | 'register'
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const tab = params.get("tab");
+      if (tab === "register" || tab === "daftar") {
+        setActiveTab("register");
+      }
+    }
+  }, []);
 
   return (
     <div className="min-h-[85vh] py-12 md:py-20 hero-pattern flex items-center justify-center relative overflow-hidden">

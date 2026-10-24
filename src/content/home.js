@@ -150,7 +150,7 @@ export const homeContent = {
           "Bonus reward pencapaian transaksi bulanan",
         ],
         ctaText: "Daftar Jadi Agen",
-        ctaHref: "/contact?topik=kemitraan",
+        ctaHref: "/member?tab=register",
         isPopular: true,
       },
       {

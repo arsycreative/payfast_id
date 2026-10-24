@@ -174,7 +174,7 @@ export const services = [
     ],
     cta: {
       label: "Daftar Jadi Agen",
-      href: "/contact?topik=kemitraan",
+      href: "/member?tab=register",
     },
   },
   {

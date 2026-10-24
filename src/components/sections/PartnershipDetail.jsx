@@ -79,7 +79,7 @@ export function PartnershipDetail() {
               </div>
 
               <Button
-                href="/contact?topik=kemitraan"
+                href="/member?tab=register"
                 variant="primary"
                 size="md"
                 className="w-full"

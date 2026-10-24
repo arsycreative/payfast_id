@@ -96,7 +96,7 @@ export function Footer() {
               ))}
               <li>
                 <Link
-                  href="/contact?topik=kemitraan"
+                  href="/member?tab=register"
                   className="hover:text-primary-400 transition-colors inline-block"
                 >
                   Daftar Agen
