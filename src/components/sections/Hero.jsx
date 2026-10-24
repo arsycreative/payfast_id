@@ -1,9 +1,9 @@
 // src/components/sections/Hero.jsx
 import Image from "next/image";
-import { Zap, ShieldCheck, Headset, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Zap, ShieldCheck, Headset, CheckCircle2 } from "lucide-react";
 import { homeContent } from "@/content/home";
 import { Container } from "@/components/shared/Container";
-import { Button } from "@/components/ui/Button";
+import { DownloadButton } from "@/components/shared/DownloadButton";
 import { Badge } from "@/components/ui/Badge";
 import { Reveal } from "@/components/shared/Reveal";
 
@@ -41,25 +41,8 @@ export function Hero() {
 
             {/* CTAs */}
             <Reveal delay={0.3}>
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
-                <Button
-                  href={hero.ctaPrimary.href}
-                  variant="primary"
-                  size="lg"
-                  icon={ArrowRight}
-                  iconPosition="right"
-                  className="w-full sm:w-auto"
-                >
-                  {hero.ctaPrimary.label}
-                </Button>
-                <Button
-                  href={hero.ctaSecondary.href}
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto"
-                >
-                  {hero.ctaSecondary.label}
-                </Button>
+              <div className="flex items-center justify-center lg:justify-start pt-2">
+                <DownloadButton size="lg" className="w-full sm:w-auto" />
               </div>
             </Reveal>
 
