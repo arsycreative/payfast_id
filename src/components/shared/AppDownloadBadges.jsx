@@ -1,7 +1,7 @@
 "use client";
 
-// src/components/shared/AppDownloadBadges.jsx
 import { useToast } from "@/components/ui/Toast";
+import { site } from "@/content/site";
 
 export function AppDownloadBadges({
   className = "",
@@ -11,9 +11,14 @@ export function AppDownloadBadges({
 }) {
   const { addToast } = useToast();
 
-  const handleStoreClick = (storeName) => {
+  const handleStoreClick = (storeName, url) => {
+    if (url && url !== "/" && url.startsWith("http")) {
+      window.open(url, "_blank", "noopener,noreferrer");
+      return;
+    }
+
     addToast({
-      title: "Aplikasi Sedang Disiapkan",
+      title: `Aplikasi ${storeName.includes("Android") ? "Android" : "iOS"} Segera Hadir`,
       message: `Link download resmi Payfast ID di ${storeName} sedang dalam tahap finalisasi dan review. Akses unduh akan segera dibuka saat peluncuran resmi!`,
       type: "app",
       duration: 5000,
@@ -45,7 +50,7 @@ export function AppDownloadBadges({
       {/* Google Play Store Button */}
       <button
         type="button"
-        onClick={() => handleStoreClick("Google Play Store (Android)")}
+        onClick={() => handleStoreClick("Google Play Store (Android)", site.googlePlayUrl)}
         className={buttonBaseClass}
         aria-label="Unduh di Google Play Store (Segera Hadir)"
       >
@@ -106,7 +111,7 @@ export function AppDownloadBadges({
       {/* Apple App Store Button */}
       <button
         type="button"
-        onClick={() => handleStoreClick("Apple App Store (iOS)")}
+        onClick={() => handleStoreClick("Apple App Store (iOS)", site.appStoreUrl)}
         className={buttonBaseClass}
         aria-label="Unduh di App Store (Segera Hadir)"
       >
@@ -148,3 +153,6 @@ export function AppDownloadBadges({
     </div>
   );
 }
+
+// Aliases for unified shared usage across the app
+export { AppDownloadBadges as DownloadButton, AppDownloadBadges as AppDownloadButtons };

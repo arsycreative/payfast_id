@@ -42,7 +42,7 @@ export function Hero() {
             {/* CTAs */}
             <Reveal delay={0.3}>
               <div className="flex items-center justify-center lg:justify-start pt-2">
-                <DownloadButton size="lg" className="w-full sm:w-auto" />
+                <DownloadButton size="lg" className="justify-center lg:justify-start" />
               </div>
             </Reveal>
 

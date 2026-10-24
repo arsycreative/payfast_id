@@ -137,7 +137,7 @@ export function ServiceBlock({ service, index }) {
           {/* Action button */}
           <Reveal delay={0.4}>
             <div className="pt-4 flex items-center">
-              <DownloadButton size="md" className="w-full sm:w-auto" />
+              <DownloadButton size="md" className="justify-start" />
             </div>
           </Reveal>
         </div>

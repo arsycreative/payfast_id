@@ -1,33 +1,15 @@
 // src/components/shared/DownloadButton.jsx
-import { Download } from "lucide-react";
-import { Button } from "@/components/ui/Button";
-import { site } from "@/content/site";
+"use client";
+
+import { AppDownloadBadges } from "./AppDownloadBadges";
 
 /**
- * Reusable Download Button Component
- * Default href is "/" (home) as configured in site.downloadAppUrl.
- * Later, the URL can be updated directly in src/content/site.js or via the href prop.
+ * Shared Download Action Component (Android & iOS Buttons)
+ * Unified for all mobile app action buttons across the application.
  */
-export function DownloadButton({
-  href = site.downloadAppUrl || "/",
-  children,
-  label = "Download Aplikasi",
-  variant = "primary",
-  size = "md",
-  icon = Download,
-  className = "",
-  ...props
-}) {
-  return (
-    <Button
-      href={href}
-      variant={variant}
-      size={size}
-      icon={icon}
-      className={className}
-      {...props}
-    >
-      {children || label}
-    </Button>
-  );
+export function DownloadButton({ size = "md", variant = "dark", className = "", ...props }) {
+  return <AppDownloadBadges size={size} variant={variant} className={className} {...props} />;
 }
+
+export { AppDownloadBadges };
+export default DownloadButton;

@@ -24,7 +24,9 @@ export const site = {
     youtube: "https://youtube.com/@payfastid",
   },
   whatsappMessage: "Halo Payfast ID, saya ingin bertanya tentang layanan.",
-  downloadAppUrl: "/", // URL aplikasi (sementara diarahkan ke home "/")
+  downloadAppUrl: "/", // Default URL aplikasi
+  googlePlayUrl: "", // URL Google Play Store resmi (kosong = trigger toast info)
+  appStoreUrl: "", // URL Apple App Store resmi (kosong = trigger toast info)
   nav: [
     { label: "Home", href: "/" },
     { label: "Layanan", href: "/services" },
