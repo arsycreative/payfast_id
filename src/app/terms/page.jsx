@@ -50,7 +50,7 @@ export default function TermsPage() {
                 1. Ketentuan Umum & Definisi
               </h2>
               <p>
-                Selamat datang di <strong>Payfast ID</strong> (dikelola oleh <strong>CV. PAYFAST INDONESIA</strong>, NIB: <strong>1611230092272</strong>). Syarat dan Ketentuan ini merupakan perjanjian yang mengikat secara hukum antara Anda (sebagai pengguna atau mitra) dengan pengelola Payfast ID.
+                Selamat datang di <strong>Payfast ID</strong> (dikelola oleh <strong>CV. PAYFAST INDONESIA</strong>). Syarat dan Ketentuan ini merupakan perjanjian yang mengikat secara hukum antara Anda (sebagai pengguna atau mitra) dengan pengelola Payfast ID.
               </p>
               <ul className="list-disc pl-6 space-y-2 text-neutral-600">
                 <li>

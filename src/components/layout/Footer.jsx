@@ -169,9 +169,6 @@ export function Footer() {
                   <strong className="block text-white font-semibold mb-0.5">
                     {site.companyName || "CV. PAYFAST INDONESIA"}
                   </strong>
-                  <span className="block text-[11px] font-mono text-primary-400 font-medium mb-1">
-                    NIB: {site.nib || "1611230092272"}
-                  </span>
                   <span>{site.contact.address}</span>
                 </span>
               </li>
@@ -199,7 +196,7 @@ export function Footer() {
         {/* Bottom row */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-1">
-            <p>© 2026 {site.companyName || "CV. PAYFAST INDONESIA"} • NIB: {site.nib || "1611230092272"}. Hak cipta dilindungi.</p>
+            <p>© 2026 {site.companyName || "CV. PAYFAST INDONESIA"}. Hak cipta dilindungi.</p>
             <span className="hidden sm:inline text-neutral-700">•</span>
             <Link
               href="/terms"

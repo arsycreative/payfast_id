@@ -26,7 +26,6 @@ export function MapEmbed() {
           </div>
           <div className="text-xs">
             <p className="font-bold text-secondary-800">{site.companyName || "CV. PAYFAST INDONESIA"}</p>
-            <p className="text-[11px] font-mono text-primary-600 font-medium">NIB: {site.nib || "1611230092272"}</p>
             <p className="text-neutral-600 mt-0.5 leading-relaxed">{site.contact.address}</p>
           </div>
         </div>
