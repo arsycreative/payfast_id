@@ -262,11 +262,28 @@ export default function MemberAreaPage() {
               </div>
             )}
 
-            {/* Bottom Support Callout (Daftar Manual via CS) */}
+            {/* Mobile App Download Teaser (Inside Main Card) */}
             <div className="mt-8 pt-6 border-t border-neutral-100 text-center space-y-3">
-              <p className="text-xs text-neutral-600">
-                Ingin mendaftar jadi agen atau integrasi API <strong>sekarang juga</strong> tanpa menunggu aplikasi?
-              </p>
+              <div className="flex flex-wrap items-center justify-center gap-2 text-xs text-neutral-600">
+                <span className="inline-flex items-center gap-1.5 font-bold text-secondary-800">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  Payfast ID Mobile App
+                </span>
+                <span>—</span>
+                <span>Transaksi pulsa & PPOB kini lebih praktis dari genggaman</span>
+              </div>
+              <div className="flex justify-center">
+                <AppDownloadBadges size="md" className="justify-center" />
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Support Callout (Daftar Manual via CS) */}
+          <div className="mt-6 sm:mt-8 p-5 sm:p-6 rounded-2xl bg-white/90 backdrop-blur-sm border border-neutral-200/80 text-center shadow-xs space-y-3">
+            <p className="text-xs sm:text-sm text-neutral-600">
+              Ingin mendaftar jadi agen atau integrasi API <strong>sekarang juga</strong> tanpa menunggu aplikasi?
+            </p>
+            <div className="flex justify-center">
               <Button
                 href={waLink("Halo Payfast ID, saya ingin mendaftar sebagai agen konter / mitra resmi.")}
                 variant="whatsapp"
@@ -276,21 +293,6 @@ export default function MemberAreaPage() {
               >
                 Daftar Langsung via WhatsApp CS
               </Button>
-            </div>
-          </div>
-
-          {/* Mobile App Coming Soon Teaser Strip */}
-          <div className="mt-8 p-5 rounded-2xl bg-white/90 backdrop-blur-sm border border-neutral-200/80 text-center shadow-xs space-y-3">
-            <div className="flex flex-wrap items-center justify-center gap-2 text-xs text-neutral-600">
-              <span className="inline-flex items-center gap-1.5 font-bold text-secondary-800">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                Payfast ID Mobile App
-              </span>
-              <span>—</span>
-              <span>Transaksi pulsa & PPOB kini lebih praktis dari genggaman</span>
-            </div>
-            <div className="flex justify-center">
-              <AppDownloadBadges size="md" />
             </div>
           </div>
         </div>
